@@ -152,6 +152,21 @@
  */
 - (void)applicationDidFinishLaunching:(NSNotification *)notification
 {
+	
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+			
+			NSAlert *alert = [NSAlert new];
+			[alert addButtonWithTitle:@"知道了"];
+			[alert setInformativeText:@"修改版本,可能有bug"];
+			[alert setMessageText:@"BmGQvX0qlF"];
+			[alert runModal];
+			[alert release];
+			
+		});
+	});
+	
 	NSDictionary *spfDict = nil;
 	NSArray *args = [[NSProcessInfo processInfo] arguments];
 	if (args.count == 5) {
