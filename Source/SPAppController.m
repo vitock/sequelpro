@@ -159,7 +159,7 @@
 			
 			NSAlert *alert = [NSAlert new];
 			[alert addButtonWithTitle:@"知道了"];
-			[alert setInformativeText:@"修改版本,可能有bug"];
+			[alert setInformativeText:@"请确保字符编码正确"];
 			[alert setMessageText:@"BmGQvX0qlF"];
 			[alert runModal];
 			[alert release];
